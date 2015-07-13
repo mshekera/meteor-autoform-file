@@ -1,7 +1,32 @@
 .img-fileUpload-thumbnail
 {
-	max-width:100px;
 	width:200px;
+	transition-property: width, left, top;
+	-webkit-transition-property: width, left, top;
+	-moz-transition-property: width;
+	transition-duration: .1s, .1s, .1s;
+	-webkit-transition-duration: .1s, .1s, .1s;
+	-moz-transition-duration: .1s, .1s, .1s;
+	transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-timing-function: ease-in;
+	cursor: pointer;
+	z-index: 999;
+}
+
+.img-fileUpload-thumbnail.active {
+	position: fixed;
+	width: 80%;
+	max-width: 80%;
+	max-height: 80%;
+	top: 10%;
+	left: 10%;
+	object-fit: contain;
+	-webkit-object-fit: contain;
+	-moz-object-fit: contain;
+	-o-object-fit: contain;
+  background-color: transparent;
+  border: none;
 }
 
 .file-upload-clear

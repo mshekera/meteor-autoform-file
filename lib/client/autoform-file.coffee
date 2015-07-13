@@ -67,3 +67,13 @@ Template.afFileUploadThumbIcon.helpers
         'file-powerpoint-o'
       else
         'file-o'
+
+Template.afFileUploadThumbImg.onCreated ->
+  @showPopup = new ReactiveVar false
+
+Template.afFileUploadThumbImg.helpers
+  showPopup: -> if Template.instance().showPopup.get() then 'active' else ''
+
+Template.afFileUploadThumbImg.events
+  'click .img-fileUpload-thumbnail': (ev) ->
+    Template.instance().showPopup.set !Template.instance().showPopup.get()
