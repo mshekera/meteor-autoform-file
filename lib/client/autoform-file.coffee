@@ -23,7 +23,7 @@ Template.afFileUpload.onCreated ->
 Template.afFileUpload.onRendered ->
   self = @
   $(self.firstNode).closest('form').on 'reset', ->
-    self.value.set null
+    self.value.set self.data?.value
 
 Template.afFileUpload.helpers
   label: ->
